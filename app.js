@@ -95,7 +95,7 @@ function checkWinner() {
 
 function resetGame() {
     
-    title.textContent = 'Tic Toc Toe';
+    title.textContent = 'Tic Tac Toe';
 
     cells.forEach(cell => {
         cell.dataset.player = ''
