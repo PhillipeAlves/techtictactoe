@@ -4,6 +4,9 @@ var cells = document.querySelectorAll('i');
 var display = document.querySelector('h1');
 var reset = document.querySelector('span')
 
+
+// Functions //
+
 var turn = 0;
 var gameOver = false;
 
@@ -79,7 +82,24 @@ function checkWinner() {
                 cells.forEach(cell => {
                     cell.removeEventListener('click', play);
                     cell.dataset.player = '';
+                    cell.classList.add('winner');
                 });
+
+                if (winner === 'X') {
+
+                    cells.forEach(cell => {
+                        cell.classList.remove('blue');
+
+                    });
+
+                } else {
+
+                    cells.forEach(cell => {
+                        cell.classList.remove('red');
+                    });
+    
+                }
+
                 
             })
             
@@ -92,8 +112,6 @@ function checkWinner() {
 
 }
 
-// Reset //
-
 function resetGame() {
     
     display.textContent = 'Tic Tac Toe';
@@ -105,13 +123,13 @@ function resetGame() {
         cell.classList.remove('blue');
         cell.classList.remove('fa-times-circle');
         cell.classList.remove('fa-dot-circle-o');
+        cell.classList.remove('winner');
         cell.addEventListener('click', play);
     });
     
     gameOver = false;
 
 }
-
 
 // Event Listeners //
 

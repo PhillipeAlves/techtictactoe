@@ -95,9 +95,10 @@ The logic worked in the following way:
 4.7. The condition to check for a winner is evaluated by an if/else statement.
 4.8. If the condition is "true" the following steps will run:
 
-4.8.1. A loop was run in each winning cell to retrieve the winner, stored in a variable with the respective name.
-4.8.2. Then the winner was displayed for the user using the h1 selector.
-4.8.3. The game over condition is set to true and the game is over. 
+4.8.1. A loop runs over each winning cell to retrieve the winner, stored in a variable with the respective name.
+4.8.2. Then the winner gets displayed for the user using the h1 selector.
+4.8.3. The color of the player that lost gets removed.  
+4.8.4. The game over condition is set to true and the game is over. 
 
 4.9. If the "isWinning" condition is "false" then the function returns and the user goes another turn.
 
