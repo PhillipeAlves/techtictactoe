@@ -1,17 +1,17 @@
 // Dom Variables //
 
 var cells = document.querySelectorAll('i');
-var title = document.querySelector('h1');
+var display = document.querySelector('h1');
 var reset = document.querySelector('span')
 
 var turn = 0;
-var winner = false;
+var gameOver = false;
 
 function play(e) {
     
     var select = e.target;
 
-    if (winner === false) {
+    if (gameOver === false) {
 
         var player1 = 'X';
         var player2 = 'O';
@@ -48,11 +48,11 @@ function checkWinner() {
 
     var board = Array.from(cells);
 
-    var selectedCell = board.map(function(move) { 
-        return move.dataset.player; 
+    var selectedCells = board.map(function(selectedCell) { 
+        return selectedCell.dataset.player; 
     });
 
-    var win = [
+    var wins = [
         [0,3,6],
         [1,4,7],
         [2,5,8],
@@ -63,17 +63,18 @@ function checkWinner() {
         [2,4,6]
     ];
 
-    win.find(winningMove => {
+    wins.find(win => {
         
-        var isWinner = selectedCell[winningMove[0]] !== "" && selectedCell[winningMove[1]] !== "" && selectedCell[winningMove[2]] !== "" 
-        && selectedCell[winningMove[0]] === selectedCell[winningMove[1]] && selectedCell[winningMove[1]] === selectedCell[winningMove[2]];
-        
+        var isWinner = selectedCells[win[0]] !== "" && selectedCells[win[1]] !== "" && selectedCells[win[2]] !== "" 
+        && selectedCells[win[0]] === selectedCells[win[1]] && selectedCells[win[1]] === selectedCells[win[2]];
 
         if (isWinner) {
             
-            winningMove.forEach((index) => {
+            win.forEach((index) => {
                 
-                title.textContent = `${selectedCell[index]} wins!`;
+                var winner = selectedCells[index];
+
+                display.textContent = `${winner} wins!`;
             
                 cells.forEach(cell => {
                     cell.removeEventListener('click', play);
@@ -82,7 +83,7 @@ function checkWinner() {
                 
             })
             
-            return  winner = true;
+            return gameOver = true;
 
         }
     })
@@ -95,7 +96,7 @@ function checkWinner() {
 
 function resetGame() {
     
-    title.textContent = 'Tic Tac Toe';
+    display.textContent = 'Tic Tac Toe';
 
     cells.forEach(cell => {
         cell.dataset.player = ''
@@ -107,9 +108,7 @@ function resetGame() {
         cell.addEventListener('click', play);
     });
     
-    winner = false;
-
-    turn++;
+    gameOver = false;
 
 }
 
