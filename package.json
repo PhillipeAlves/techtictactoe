@@ -1,0 +1,21 @@
+{
+  "name": "techTicTacToe",
+  "version": "1.0.0",
+  "description": "TIC-TAC-TOE",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build; surge build techtictactoe.surge.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhillipeAlves/techtictactoe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhillipeAlves/techtictactoe/issues"
+  },
+  "homepage": "https://github.com/PhillipeAlves/techtictactoe#readme"
+}
