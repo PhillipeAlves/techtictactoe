@@ -1,4 +1,4 @@
-![Banner](/ttt.gif)
+![Banner](/banner-ttt.gif)
 
 ## The Rules
 
