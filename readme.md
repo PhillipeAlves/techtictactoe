@@ -108,4 +108,4 @@ The logic worked in the following way:
 - CSS
 - JavaScript
 
-[<img alt="project-view" src="https://us.123rf.com/450wm/giamportone/giamportone1804/giamportone180400109/99753262-stock-vector-click-here-button-with-arrow-pointer-icon.jpg?ver=6" width="40%">.](http://flowery-gun.surge.sh/)
+[<img alt="project-view" src="https://us.123rf.com/450wm/giamportone/giamportone1804/giamportone180400109/99753262-stock-vector-click-here-button-with-arrow-pointer-icon.jpg?ver=6" width="30%">.](http://flowery-gun.surge.sh/)
